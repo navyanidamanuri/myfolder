@@ -1,43 +1,59 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>my first webpage</title>
+    <link href="stylesheet.css" rel="stylesheet" />
   </head>
-  <body style="background-color: grey">
+ 
+  <body style="background-color: grey"> 
   <header>
     <h1>Logo</h1> 
-     <ol>
+    <nav>
+     <ul class="main_menu">
          <li>
-            <p><a href="https://www.Link1.com/">Link1</a></p>
+            <a href="https://www.Link1.com/">Link1</a>
             
          </li>
          <li>
-            <p><a href="https://www.Link2.com/">Link2</a></p>
+            <a href="https://www.Link2.com/">Link2</a>
          </li>
          <li>
-            <p><a href="https://www.Link3.com/">Link3</a></p>
+            <a href="https://www.Link3.com/">Link3</a>
          </li>
-      </ol>
-     <a href="https://www.Login.com">Login</a>
-  </header>
-    <container>        
-        <h2>HeadLine</h2>
-        <p>Some paragraph text below headline</p>
-        <h3>Article headline</h3>
-        <p>Some paragraph text 1</p>
-        <p>Some paragraph text 2</p>
-        <p>Some paragraph text 3</p>
-        <p>Some paragraph text 4</p>
-        <h3>Article headline</h3>
-        <p>Some paragraph text 1</p>
-        <p>Some paragraph text 2</p>
-        <img src="img_chania.jpg" alt="Flowers in Chania" width="460" height="345">
-     </container>
+      </ul>
+      <ul class="login_menu"><li><a href="https://www.Login.com">Login</a></li></ul>
+     </nav>
+     
+  </header> 
+  <div class="container">
+   <div class="article">  
+        <section>
+			<h2>HeadLine</h2>
+			<p>Some paragraph text below headline</p>
+		</section>
+		<section>
+		  <div class="part1">
+			<h3>Article headline</h3>
+			<p>Some paragraph text 1</p>
+			<p>Some paragraph text 2</p>
+			<p>Some paragraph text 3</p>
+			<p>Some paragraph text 4</p>
+			</div>
+			<div class="part2">
+			<h3>Article headline</h3>
+			<p>Some paragraph text 1</p>
+			<p>Some paragraph text 2</p>
+			</div>
+		</section>
+        <img src="code.jfif" alt="" width="460" height="345">
+	</div>
+	<div class="aside"> 
      <aside>
             <h2>headLine for aside</h2>
             <ul>
-                <li><h4>nation 1</h4</li> 
+                <li><h4>nation 1</h4></li> 
             </ul>
             <ol>
               <li>
@@ -51,7 +67,7 @@
               </li>
             </ol>
             <ul>
-                <li><h4>nation 2</h4</li> 
+                <li><h4>nation 2</h4></li> 
             </ul>
             <ol>
               <li>
@@ -65,7 +81,7 @@
               </li>
             </ol>
             <ul>
-                <li><h4>nation 3</h4</li> 
+                <li><h4>nation 3</h4></li> 
             </ul>
             <ol>
               <li>
@@ -79,6 +95,8 @@
               </li>
             </ol>
           </aside>
+		  </div>
+		</div> 
              <footer>
                     <p>&copy; Full name</p>
               </footer>
