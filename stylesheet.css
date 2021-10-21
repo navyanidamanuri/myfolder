@@ -10,73 +10,149 @@
         background-blend-mode: multiply;
     }
     body {
-        width:1024px;
-        margin: auto;
-       }
-       header {
-         width:100%;
-         height:60px; 
-         margin: 0px 15px;
-         background-color: #ccc;
-       }
-       h1 {
-         float: left;
-         display: inline-block;
-         margin: 0px;
-       }
-       nav {
-         margin-left:12%;
-       }
-       .main_menu {
-         margin: 0px;
-         }
-       .main_menu li{
-         float:left;
-         padding : 16px 20px;
-         list-style-type:none;
-         border: 1px solid #000000
-       }
-       .login_menu {
-         float: right;
-         margin: 0px;
-       }
-       .login_menu li{
-         list-style-type:none;
-         border: 1px solid #000000;
-         padding : 16px 20px;
-       }
-       .container {
-         width:100%;
-         background-color: #b66f4eab;
-         margin: 0px 15px;
+      width:1024px;
+      margin: auto;
      }
-       .article {
-           width: 80%;
-         float: left;
-       }
-       .aside {
-         width: 20%;
-         display: inline-block;
-         background-color: #a86161;
-       }
-       aside {
-         padding: 15px;
+     
+     header {
+       width:100%;
+       height:60px; 
+     margin: 0px 15px;
+     background-color:#c48d8d;
      }
-       section {
-         padding: 15px;
+     h1 {
+     float: left;
+     float: clear;
+       display: inline-block;
+       margin: 0px;
      }
-     .part1 {
-         width: 50%;
-         float: left;
+     nav {
+       margin-left:12%;
      }
-     footer {
-         width: 100%;
-         background-color: #626ba8;
-         margin: 0px 15px;
-         display: inline-block;
+     .main_menu {
+       margin: 0px;
      }
-     footer p {
-         text-align: center;
-         padding: 15px;
+     .main_menu li{
+        float: left;
+       background-color:  #c48d8d;
+       padding: 20px 20px;
+       list-style-type: none;
+       border-left: 1px solid #000000;
+       border-right: 1px solid #000000;
+   }
+     .login_menu {
+       float: right;
+     margin: 0px;
      }
-    
+     .login_menu li{
+       list-style-type: none;
+      background-color: #c48d8d;
+       border-left: 1px solid #000000;
+       padding: 20px 20px;
+       border-right: 1px solid #000;
+     }
+     .Index_menu {
+      float: right;
+    margin: 0px;
+    }
+    .Index_menu li{
+      list-style-type: none;
+     background-color: #c48d8d;
+      border-left: 1px solid #000000;
+      padding: 20px 20px;
+      border-right: 1px solid #000;
+    }
+     .container {
+       width:100%;
+       height: 570px;
+       background-color:sienna;
+     margin: 0px 15px;
+   }
+     .article {
+         width: 80%;
+         height:200px;
+       float: left;
+     }
+     .form {
+      width: 80%;
+      height:300px;
+    float: left;
+  }
+  .aside {
+    line-height: normal;
+    width: 20%;
+    display: inline-block;
+    background-color: #a86161;
+    min-height: 415px;
+}
+
+aside {
+    border: 1px solid #000;
+    margin: 20px;
+    background-color: #cebfbf;
+}
+p.big {
+  line-height: 0.2;
+}
+    .part1 {
+      width: 46%;
+      float: left;
+      float: clear;
+       margin-left: 20px;
+     margin-top: 20px;
+     margin-bottom: 20px;
+       background-color: #cebfbf;
+       border: 1px solid #000;
+   }
+   .part2 {
+    width: 46%;
+    float: left;
+    float: clear;
+    margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 70px;
+    background-color: #cebfbf;
+    border: 1px solid #000;
+   }
+   .total_header {
+       border: 1px solid #000000;
+       width: 100%;
+       height: 58px;
+   }
+   a {
+       color: #000;
+       text-decoration: none;
+   }
+   p {
+       text-align: center;
+   }
+   .bradcump {
+       border: 1px solid #000;
+       width: 30%;
+       margin-left: 20px;
+       margin-top: 20px;
+       background-color: #cebfbf;
+   }
+   h2 {
+       text-align: center;
+   }
+   .sub-txt {
+    padding: 50px;
+     width: 83%;
+       height: 80%;
+       border: 1px solid #000;
+       margin-left: 20px;
+       margin-top: 20px;
+     background-color: #cebfbf;
+   }
+   footer {
+       width: 100%;
+       background-color: #626ba8;
+       margin: 0px 15px;
+     display: inline-block;
+   }
+   footer p {
+       text-align: center;
+     padding: 15px;
+   }
