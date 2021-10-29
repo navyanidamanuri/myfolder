@@ -1,0 +1,20 @@
+body{background-color: black;color: white}
+.cell{
+    width:35px;
+    height:35px;
+}
+.floor{
+    background-color: aqua;
+}
+.wall{
+    background-color: brown;
+}
+.target{
+    background-color: chartreuse;
+}
+.goal{
+    background-color: yellow;
+}
+.create{
+    background-color: violet;
+}
