@@ -9,6 +9,9 @@ var TARGET="P";
 var GOAL = "G";
 var CREATE = "B";
 var gBoard= tileMap01.mapGrid;
+var playerPosY = 0;
+var playerPosX = 0;
+
 function printBoard(){
     var tblBoard=document.getElementById('tblBoard');
     var strHTML='';
@@ -26,8 +29,8 @@ function printBoard(){
                     break;
                 case TARGET:
                     cellClass="target";
-                    xAxis=j;
-                    yAxis=i;
+                    playerPosX=j;
+                    playerPosY=i;
                     break;
                 case CREATE:
                     cellClass="create";
@@ -43,29 +46,70 @@ function printBoard(){
     }
     tblBoard.innerHTML=strHTML;
 }
-var xAxis = 0;
-var yAxis = 0;
-/*
-$(document).ready(function () {
-    document.getElementById("blockId").style.left = xAxis + "px";
-    document.getElementById("blockId").style.top = yAxis + "px";
-});
 
-$(document).keyup(function (e) {
+function exampleMoveOneStepOnly(offset_Y,offset_X) {//take one step up
+    let playerBlock = document.getElementById("y" + playerPosY + "x" + playerPosX);
+    let moveToBlock = document.getElementById("y" + (playerPosY + offset_Y) + "x" + (playerPosX+offset_X));
+
+    if(moveToBlock.classList.contains("wall") === false)
+    {
+        playerBlock.classList.remove("target");
+        moveToBlock.classList.add("target");
+    
+        playerPosY = playerPosY + offset_Y;
+        playerPosX = playerPosX + offset_X;
+    }
+}
+
+/*function handleClick(x,y){
+    var xDiff=x-gGamerPos.x;
+    var yDiff=y-gGamerPos.y;
+    var xAbsDiff=Math.abs(x-gGamerPos.x)
+    var yAbsDiff=Math.abs(y-gGamerPos.y)
+    if((xAbsDiff==1&&jAbsDiff==0)||(yAbsDiff==1&&xAbsDiff==0)){
+        if(gBoard[x][y].type!=WALL){
+            var CanMove=true;
+            if(gBoard[x][y].gameElement == CREATE){
+                if(gBoard[x+xDiff][y+yDiff.type!=WALL&&gBoard[x+xDiff][y+yDiff].gameElement == null]){
+                    gBoard[x][y].gameElement=null;
+                    gBoard[x+xDiff][y+yDiff].gameElement=CREATE;
+                }else{
+                    console.log("WALL Behind Box");
+                    CanMove=false;
+                }
+            }
+            if(CanMove){
+                gBoard[gGamerPos.x][gGamerPos.y].gameElement=null;
+                gGamerPos.x=x;
+                gGamerPos.y=y;
+                gBoard[gGamerPos.x][gGamerPos.y].gameElement=TARGET;
+            }
+        }
+    }
+    printBoard();
+}*/
+
+document.addEventListener("keydown", function (e) {
+
     if (e.keyCode === 37) {
-        xAxis = xAxis - 50;
-        document.getElementById("blockId").style.left = xAxis + "px";
+        //left
+        exampleMoveOneStepOnly(0 , -1);
+        e.preventDefault();//stop browser from scrolling with arrow key
     }
     else if (e.keyCode === 38) {
-        yAxis = yAxis - 50;
-        document.getElementById("blockId").style.top = yAxis  + "px";
+        //up
+        exampleMoveOneStepOnly(-1 , 0);
+        e.preventDefault();//stop browser from scrolling with arrow key
     }
     else if (e.keyCode === 39) {
-        xAxis = xAxis + 50;
-        document.getElementById("blockId").style.left = xAxis + "px";
+        //right
+        exampleMoveOneStepOnly(0 , +1);
+        e.preventDefault();//stop browser from scrolling with arrow key
     }
     else if (e.keyCode === 40) {
-        yAxis = yAxis + 50;
-        document.getElementById("blockId").style.top = yAxis + "px";
+        //down
+        exampleMoveOneStepOnly(+1 , 0);
+        e.preventDefault();//stop browser from scrolling with arrow key
     }
-})*/
+    //console.log("after press logic:", e);
+});
