@@ -46,48 +46,69 @@ function printBoard(){
     }
     tblBoard.innerHTML=strHTML;
 }
-
-function exampleMoveOneStepOnly(offset_Y,offset_X) {//take one step up
+function exampleMoveOneStepOnly(offset_Y,offset_X) {
     let playerBlock = document.getElementById("y" + playerPosY + "x" + playerPosX);
     let moveToBlock = document.getElementById("y" + (playerPosY + offset_Y) + "x" + (playerPosX+offset_X));
 
-    if(moveToBlock.classList.contains("wall") === false)
+    if(moveToBlock.classList.contains("wall") === false && moveToBlock.classList.contains("create") === false)
     {
         playerBlock.classList.remove("target");
         moveToBlock.classList.add("target");
     
         playerPosY = playerPosY + offset_Y;
         playerPosX = playerPosX + offset_X;
+    } if ( moveToBlock.classList.contains("create") !== false ) {
+        if (offset_Y === 0 && offset_X === -1) {
+            exampleMoveOneStepOnlyCreate(0 , -2, 0 , -1);
+            
+        }
+        else if (offset_Y === -1 && offset_X === 0) {
+            exampleMoveOneStepOnlyCreate(-2 , 0, -1 , 0);
+        
+        }
+        else if (offset_Y === 0 && offset_X === +1) {
+            exampleMoveOneStepOnlyCreate(0 , +2, 0 , +1);
+            
+        }
+        else if (offset_Y === +1 && offset_X === 0) {
+            exampleMoveOneStepOnlyCreate(+2 , 0, +1 , 0);
+            
+        }
     }
 }
 
-/*function handleClick(x,y){
-    var xDiff=x-gGamerPos.x;
-    var yDiff=y-gGamerPos.y;
-    var xAbsDiff=Math.abs(x-gGamerPos.x)
-    var yAbsDiff=Math.abs(y-gGamerPos.y)
-    if((xAbsDiff==1&&jAbsDiff==0)||(yAbsDiff==1&&xAbsDiff==0)){
-        if(gBoard[x][y].type!=WALL){
-            var CanMove=true;
-            if(gBoard[x][y].gameElement == CREATE){
-                if(gBoard[x+xDiff][y+yDiff.type!=WALL&&gBoard[x+xDiff][y+yDiff].gameElement == null]){
-                    gBoard[x][y].gameElement=null;
-                    gBoard[x+xDiff][y+yDiff].gameElement=CREATE;
-                }else{
-                    console.log("WALL Behind Box");
-                    CanMove=false;
-                }
-            }
-            if(CanMove){
-                gBoard[gGamerPos.x][gGamerPos.y].gameElement=null;
-                gGamerPos.x=x;
-                gGamerPos.y=y;
-                gBoard[gGamerPos.x][gGamerPos.y].gameElement=TARGET;
+function exampleMoveOneStepOnlyCreate(offset_Y,offset_X, offset_Y_Original,offset_X_Original) {
+    let playerBlock = document.getElementById("y" + (playerPosY + offset_Y_Original) + "x" + (playerPosX+offset_X_Original));
+    let moveToBlock = document.getElementById("y" + (playerPosY + offset_Y) + "x" + (playerPosX+offset_X));
+
+    let playerBlockCursor = document.getElementById("y" + playerPosY + "x" + playerPosX);
+    let moveToBlockCursor = document.getElementById("y" + (playerPosY + offset_Y_Original) + "x" + (playerPosX+offset_X_Original));
+
+    if(moveToBlock.classList.contains("wall") === false && moveToBlock.classList.contains("create") === false)
+    {
+        playerBlock.classList.remove("create");
+        moveToBlock.classList.add("create");
+
+        playerBlockCursor.classList.remove("target");
+        moveToBlockCursor.classList.add("target");
+    
+        playerPosY = playerPosY + offset_Y_Original;
+        playerPosX = playerPosX + offset_X_Original;
+
+        var goalCells = document.querySelectorAll("td.goal");
+        var checkGoalsCount = 0;
+        for (var i = goalCells.length - 1; i >= 0; i--) {
+            if(goalCells[i].classList.contains("create")  !== false ){
+                checkGoalsCount++;
             }
         }
+        if ( checkGoalsCount === 6 ) {
+            alert("Level Completed Successfully...");
+            printBoard();
+        }
     }
-    printBoard();
-}*/
+}
+
 
 document.addEventListener("keydown", function (e) {
 
